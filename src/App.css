@@ -1,38 +1,371 @@
-.App {
-  text-align: center;
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111111;
+  color: #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #66b2ff;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  border-bottom: 1px solid #333;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0d1117;
+  color: #f5f5f5;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar h1 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 600;
+  color: #66b2ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tagline {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+@media (min-width: 600px) {
+  .navbar-container {
+    flex-direction: row;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tagline {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+}
+
+.hero-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn,
+.hire-btn {
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.hire-btn {
+  background-color: #28c76f;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(40, 199, 111, 0.3);
+}
+
+.hire-btn:hover {
+  background-color: #22b263;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* About Section */
+.about {
+  text-align: center;
+}
+
+.about h3 {
+  margin-top: 15px;
+  font-size: 1.6rem;
+  color: #66b2ff;
+}
+
+.about p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 15px auto;
+}
+
+/* Skills Section */
+.skills {
+  text-align: center;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills li {
+  margin: 8px 12px;
+  color: #ddd;
+  background: #1a1a1a;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* Experience Section */
+.experience {
+  text-align: center;
+}
+
+.experience-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.experience-header h3 {
+  margin: 0;
+  color: #ffdd57;
+}
+
+.experience-header a {
+  color: #66b2ff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.experience .duration {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.experience p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Memory Photo Styling */
+.memory-photo {
+  margin-top: 15px;
+  background-color: #222;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+.memory-photo h4 {
+  color: #66b2ff;
+  margin-bottom: 10px;
+}
+
+.memory-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.memory-caption {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+/* Projects Section */
+.projects {
+  text-align: center;
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+@media (min-width: 600px) {
+  .project-grid {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.project-card h4 {
+  color: #66b2ff;
+  margin-top: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.project-image-wrapper {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.read-more-btn {
+  background-color: #66b2ff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #5599dd;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #000;
+  color: #aaa;
+  border-top: 1px solid #222;
+}
+
+.footer-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #555;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  display: inline-block;
+  color: #66b2ff;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.fun-quote {
+  margin-top: 20px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.flight-path .plane {
+  margin-top: 30px;
+  width: 40px;
+  animation: fly 5s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
   }
 }
